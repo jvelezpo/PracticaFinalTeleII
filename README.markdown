@@ -22,13 +22,22 @@ Link de descarga `http://activemq.apache.org/download.html`
 
 #Correr
 Se debe de correr primero el ActiveMQ
+
 En Windows:
+
 1. Descomprimir cd activemq.zip
+
 2. `cd [activemq_install_dir]`
+
 3.  en consola: `bin\activemq`
+
 Link `http://activemq.apache.org/getting-started.html`
 
+
 Luego de tener el ActiveMQ corriendo en netbeans, eclipse o su IDE preferido correr: 
+
 primero el proyecto llamado `Receptor`
+
 Luego correr el proyecto llamado `Modelo`
+
 por ultimo se corre el proyecto llamado `Coordinador`
