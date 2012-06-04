@@ -15,8 +15,11 @@ public class Coordinador implements ExceptionListener {
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         List<String> lines = new ArrayList<String>();
         String line = null;
+        int contador = 0;
         while ((line = bufferedReader.readLine()) != null) {
-            lines.add(line);
+            if(contador != 0)
+                lines.add(line);
+            contador++;
         }
         bufferedReader.close();
         return lines.toArray(new String[lines.size()]);

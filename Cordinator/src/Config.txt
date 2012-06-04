@@ -1,0 +1,5 @@
+arg0=>tamFinca(en hectareas)//arg1=>tiempo(en anios)//arg2=>matas(por hectarea)//arg3=>precipitacion(mm/anio)//arg4=>glifosato//arg5=>Aracuat
+50//1//4000//2500//true//true
+100//1//8000//5000//true//true
+50//1//4000//2500//false//false
+100//1//8000//5000//false//false

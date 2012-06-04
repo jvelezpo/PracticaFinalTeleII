@@ -42,7 +42,7 @@ public class GridModel implements ExceptionListener {
 
     public void jobConsumer() {
         try {
-            final GridModel g2 = this;
+            final GridModel gridModel = this;
             // Crear conexion con activeMQ
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://" + this.ip + ":61616");
             
@@ -73,11 +73,11 @@ public class GridModel implements ExceptionListener {
                         
                         // Separar el mensaje en tokens
                         MessageSplit p = new MessageSplit();
-                        double[] params = p.parse(text);
+                        String[] params = p.parse(text);
                         
                         // Se simula el modelo con los parametros recibidos
                         simulador = new Simulador();
-                        simulador.simular(params[0], params[1], (int) params[2], (int) params[3], g2, params[4]);
+                        simulador.simular(gridModel, params[0], params[1], params[2], params[3], params[4], params[5]);
 
                         System.out.println("===========Fin del mensaje===========\n\n\nEsperando por mas datos para ser procesados\n");
                     } else {
