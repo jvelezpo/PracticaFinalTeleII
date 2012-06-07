@@ -9,7 +9,14 @@ public class Ambiente {
      */
     public double chequearPrecipitacion(String precipitacion){
         double pre = Double.parseDouble(precipitacion);
-        int precipitacionBuena = 2500;
-        return pre/precipitacionBuena;
+        double retorne;
+        if(pre >= 2200 || pre <= 2800){
+            retorne = 0.05;
+        }else if(pre < 2200){
+            retorne = -0.05;
+        }else{
+            retorne = -0.1;
+        }
+        return retorne;
     }
 }

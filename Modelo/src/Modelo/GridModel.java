@@ -9,7 +9,7 @@ public class GridModel implements ExceptionListener {
     private String ip;
     private Simulador simulador;
 
-    public void submitResults(String text) {
+    public void enviarResultados(String text) {
         try {
             // Crear conexion con activeMQ
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://" + this.ip + ":61616");
@@ -40,7 +40,7 @@ public class GridModel implements ExceptionListener {
         }
     }
 
-    public void jobConsumer() {
+    public void consumirTrabajos() {
         try {
             final GridModel gridModel = this;
             // Crear conexion con activeMQ
@@ -113,7 +113,7 @@ public class GridModel implements ExceptionListener {
                 String ip = args[0];
                 GridModel gm = new GridModel(ip);
                 System.out.println("Modelo encendido, esperando datos para procesar.");
-                gm.jobConsumer();
+                gm.consumirTrabajos();
             }else{
                 throw new Exception();
             }

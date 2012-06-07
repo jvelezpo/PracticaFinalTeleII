@@ -1,4 +1,4 @@
-package Resultado;
+package Distribuidor;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,7 +8,7 @@ import java.util.List;
 import javax.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public class Resultado implements ExceptionListener {
+public class Distribuidor implements ExceptionListener {
 
     public static String[] getSubsLines(String filename) throws IOException {
         FileReader fileReader = new FileReader(filename);
@@ -25,7 +25,7 @@ public class Resultado implements ExceptionListener {
         return lines.toArray(new String[lines.size()]);
     }
 
-    public void processCordinador(String ip, String file) {
+    public void procesoDistribuidor(String ip, String file) {
         try {
             // Crear conexion con activeMQ
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://" + ip + ":61616");
@@ -75,13 +75,13 @@ public class Resultado implements ExceptionListener {
      * @param args se debe pasar dos argumentos: el primero debe de ser la ip de la maquina donde se corre este receptor, el segundo el path del archivo de configuracion
      */
     public static void main(String[] args) {
-        Resultado coo = new Resultado();
+        Distribuidor coo = new Distribuidor();
         try {
             if(args.length == 2){
                 String ip = args[0];
                 String file = args[1];
                 System.out.println("Coordinador encendido.");
-                coo.processCordinador(ip, file);
+                coo.procesoDistribuidor(ip, file);
             }else{
                 throw new Exception();
             }

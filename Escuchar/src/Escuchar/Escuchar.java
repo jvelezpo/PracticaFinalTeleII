@@ -5,7 +5,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class Escuchar implements ExceptionListener {
 
-    void processReceptor(String brokerIp) {
+    void procesoEscuchar(String brokerIp) {
         try {
             // Crear conexion con activeMQ
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://" + brokerIp + ":61616");
@@ -61,7 +61,7 @@ public class Escuchar implements ExceptionListener {
             if (args.length == 1) {
                 String ip = args[0];
                 System.out.println("Receptor encendido.");
-                re.processReceptor(ip);
+                re.procesoEscuchar(ip);
             }else{
                 throw new Exception();
             }

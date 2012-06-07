@@ -32,7 +32,7 @@ public class Simulador {
         double glifoChequeado = this.materiales.chequearGlifosato(glifo);
         double araChequeado = this.materiales.chequearAracuat(ara);
 
-        double produccion = tiempoChequeado + (tiempoChequeado * glifoChequeado) + (tiempoChequeado * araChequeado);
+        double produccion = tiempoChequeado + (tiempoChequeado * glifoChequeado) + (tiempoChequeado * araChequeado) + (tiempoChequeado * preciChequeada);
 
         String message = "La produccion esperada es de: " + produccion + " racimos\n";
         if(matasPorHectarea > 1)
@@ -43,6 +43,6 @@ public class Simulador {
             message += "La utilizacion de la finca es de: " + matasPorHectarea + ", considere sembrar mas matas para alcanzar mejores resultados\n";
         Hilo hilo = new Hilo();
         hilo.run();
-        g.submitResults(message);
+        g.enviarResultados(message);
     }
 }
