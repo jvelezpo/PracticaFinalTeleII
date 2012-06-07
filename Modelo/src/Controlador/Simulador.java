@@ -34,9 +34,11 @@ public class Simulador {
 
         double produccion = tiempoChequeado + (tiempoChequeado * glifoChequeado) + (tiempoChequeado * araChequeado);
 
-        String message = "La produccion esperada es de: " + produccion + "\n";
+        String message = "La produccion esperada es de: " + produccion + " racimos\n";
         if(matasPorHectarea > 1)
-            message += "El numero de matas por hectarea es demasiado, considera sembrar 4000 matas por hectareas.\nSi continua con esta cantidad de matas sembrada la utilizacion de la tierra seria de: " + matasPorHectarea + " la capacidad\n";
+            message += "El numero de matas por hectarea es demasiado, considere sembrar 4000 matas por hectareas.\nSi continua con esta cantidad de matas sembrada la utilizacion de la tierra seria de: " + matasPorHectarea + " la capacidad\n";
+        else if (matasPorHectarea == 1)
+            message += "La utilizacion de la finca es optima\n";
         else
             message += "La utilizacion de la finca es de: " + matasPorHectarea + ", considere sembrar mas matas para alcanzar mejores resultados\n";
         Hilo hilo = new Hilo();
