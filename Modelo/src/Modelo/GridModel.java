@@ -69,7 +69,7 @@ public class GridModel implements ExceptionListener {
                         } catch (JMSException e) {
                             e.printStackTrace();
                         }
-                        System.out.println("Llego una peticion para procesar los siguientes datos: " + text);
+                        System.out.println("Llego una peticion para procesar los siguientes datos: " + text + "\n");
                         
                         // Separar el mensaje en tokens
                         MessageSplit p = new MessageSplit();

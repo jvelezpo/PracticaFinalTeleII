@@ -7,8 +7,8 @@ public class Ambiente {
      * @param precipitacion
      * @return 
      */
-    public int chequearPrecipitacion(String precipitacion){
-        int pre = Integer.parseInt(precipitacion);
+    public double chequearPrecipitacion(String precipitacion){
+        double pre = Double.parseDouble(precipitacion);
         int precipitacionBuena = 2500;
         return pre/precipitacionBuena;
     }

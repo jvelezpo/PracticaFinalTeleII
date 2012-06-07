@@ -28,14 +28,17 @@ public class Simulador {
 
         double matasPorHectarea = this.finca.ChequearMatasPorHectarea(numMatas);
         int tiempoChequeado = this.tiempo.chequearTiempo(tiempo, numMatas, tamFinca);
-        int preciChequeada = this.ambiente.chequearPrecipitacion(precipitacion);
+        double preciChequeada = this.ambiente.chequearPrecipitacion(precipitacion);
         double glifoChequeado = this.materiales.chequearGlifosato(glifo);
         double araChequeado = this.materiales.chequearAracuat(ara);
 
         double produccion = tiempoChequeado + (tiempoChequeado * glifoChequeado) + (tiempoChequeado * araChequeado);
 
         String message = "La produccion esperada es de: " + produccion + "\n";
-        message += "La utilizacion de la finca es de: " + matasPorHectarea + "\n";
+        if(matasPorHectarea > 1)
+            message += "El numero de matas por hectarea es demasiado, considera sembrar 4000 matas por hectareas.\nSi continua con esta cantidad de matas sembrada la utilizacion de la tierra seria de: " + matasPorHectarea + " la capacidad\n";
+        else
+            message += "La utilizacion de la finca es de: " + matasPorHectarea + ", considere sembrar mas matas para alcanzar mejores resultados\n";
         Hilo hilo = new Hilo();
         hilo.run();
         g.submitResults(message);
