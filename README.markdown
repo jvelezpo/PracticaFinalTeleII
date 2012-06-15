@@ -5,9 +5,10 @@
 ####Juan Esteban Mosquera
 --------------------
 #Colaboradores
-@ [jvidalba](http://github.com/jvidalba1) 
-@ [jvidalba](http://github.com/rderoldan1)
 
+####Jose Mateo Vidal @ [jvidalba](http://github.com/jvidalba1) 
+####Ruben Espinosa @ [rderoldan](http://github.com/rderoldan1)
+--------------------
 #Requisitos
 
 ####Jars
