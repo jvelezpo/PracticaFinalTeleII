@@ -3,6 +3,10 @@
 ####Juan Sebastian Velez Posada
 ####James David Benitez
 ####Juan Esteban Mosquera
+--------------------
+#Colaboradores
+@ [jvidalba](http://github.com/jvidalba1) 
+@ [jvidalba](http://github.com/rderoldan1)
 
 #Requisitos
 
@@ -15,7 +19,7 @@ Estan situados en la carpeta jars, estos deben de ser agregados a cada uno de lo
 `slf4j-log4j12-1.5.11.jar`
 
 ####ActiveMQ
-Apache ActiveMQ ™ is the most popular and powerful open source messaging and Integration Patterns server.
+Apache ActiveMQ ï¿½ is the most popular and powerful open source messaging and Integration Patterns server.
 
 Link de descarga `http://activemq.apache.org/download.html`
 
